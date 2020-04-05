@@ -1,9 +1,24 @@
 <html>
 <body>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  INPUT MEGA URL: <input type="text" name="fname">
+  <input type="submit">
+</form>
+
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $url = htmlspecialchars($_REQUEST['fname']);
+    if (empty($url)) {
+        echo "MEGA URL is empty";
+    } else {
+        echo $url;
+    }
+}
+
 error_reporting(0);
 
-$url = "https://mega.nz/#!EVNSwS4K!W2QnzYAbxrQ-yxETvHt1QP_7nZtPZ083aR_q83aSSZw";
+#$url = "https://mega.nz/#!EVNSwS4K!W2QnzYAbxrQ-yxETvHt1QP_7nZtPZ083aR_q83aSSZw";
 preg_match("/!(.+?)!/", $url, $output_array);
 $fileID = $output_array[1];
 $domain = "meganz";
