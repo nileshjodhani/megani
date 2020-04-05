@@ -3,7 +3,7 @@
 <?php
 error_reporting(0);
 
-$url = "https://mega.nz/#!YB9EjDxA!QEOWJ4AUMNFAQWqQWCwAMkRXE9IWnTldLPdQ9OYPenE";
+$url = "https://mega.nz/#!EVNSwS4K!W2QnzYAbxrQ-yxETvHt1QP_7nZtPZ083aR_q83aSSZw";
 preg_match("/!(.+?)!/", $url, $output_array);
 $fileID = $output_array[1];
 $domain = "meganz";
